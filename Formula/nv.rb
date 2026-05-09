@@ -7,16 +7,16 @@ class Nv < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/drlockett/nvcli/releases/download/v0.1.0/nv_darwin_arm64.tar.gz"
-      sha256 "c3594c5d4a842e95d484b0c45318c6d3b09c5268623ab0de24e32042999cf215"
+      sha256 "b619e0545fea36f76229e0622e3d00d879bbc73a7103339820fad2226500d29a"
     else
       url "https://github.com/drlockett/nvcli/releases/download/v0.1.0/nv_darwin_amd64.tar.gz"
-      sha256 "eafc0b4b978f5c5aeca7f1fb06e4e0503b21735b8600822e6431957f7bec4b25"
+      sha256 "dee607a9e023f8217ac58b96ee6c215555eff6ce7810e10b65d972414da06d63"
     end
   end
 
   on_linux do
     url "https://github.com/drlockett/nvcli/releases/download/v0.1.0/nv_linux_amd64.tar.gz"
-    sha256 "3c1fdf174c25e8841d659e532748eac687d69e670fd19de9595365fde726f393"
+    sha256 "72efcc11288f66e4033451bd4476232f9ad7de44432c9434551a01da6ccb854b"
   end
 
   def install
