@@ -1,17 +1,18 @@
 # Node Vertex Homebrew Tap
 
-Install Node Vertex in one command. Turn localhost into globalhost.
+Install the Node Vertex CLI in one command.
 
 ```bash
 brew tap drlockett/tap
 brew install nv
 nv enroll
-nv create hello --value "Every workflow starts with a vertex."
 ```
 
-Target production tap once nrun organization repo creation is enabled:
+`nv enroll` prints an activation code, directs you to `https://login.nodevertex.com/activate`, and waits until browser approval completes. New email identities must verify email before creating vertices.
+
+Quick check:
 
 ```bash
-brew tap nrun/tap
-brew install nv
+nv --version
+nv --agent
 ```

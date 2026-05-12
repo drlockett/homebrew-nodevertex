@@ -1,41 +1,49 @@
 class Nv < Formula
   desc "Node Vertex CLI - turn values, files, apps, and workflows into vertices"
   homepage "https://nodevertex.com"
-  version "0.1.0"
+  version "0.1.2"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/drlockett/nvcli/releases/download/v0.1.0/nv_darwin_arm64.tar.gz"
-      sha256 "b619e0545fea36f76229e0622e3d00d879bbc73a7103339820fad2226500d29a"
+      url "https://nodevertex.com/downloads/nvcli/latest/nv-darwin-arm64"
+      sha256 "b9cfdbcbffe89529193e26556a38e7e250945e56d74428c3b2f1e01786a32694"
     else
-      url "https://github.com/drlockett/nvcli/releases/download/v0.1.0/nv_darwin_amd64.tar.gz"
-      sha256 "dee607a9e023f8217ac58b96ee6c215555eff6ce7810e10b65d972414da06d63"
+      url "https://nodevertex.com/downloads/nvcli/latest/nv-darwin-x64"
+      sha256 "5879da43098bc52b89bcfaa3beddd184ceaa312c00c96a0099ae624d6b9ce72f"
     end
   end
 
   on_linux do
-    url "https://github.com/drlockett/nvcli/releases/download/v0.1.0/nv_linux_amd64.tar.gz"
-    sha256 "72efcc11288f66e4033451bd4476232f9ad7de44432c9434551a01da6ccb854b"
+    if Hardware::CPU.arm?
+      url "https://nodevertex.com/downloads/nvcli/latest/nv-linux-arm64"
+      sha256 "f19bf54e3728b10dd66fcd9ac96d4d77826a345a8d9bc7b6e67c39c249230835"
+    else
+      url "https://nodevertex.com/downloads/nvcli/latest/nv-linux-x64"
+      sha256 "91da72b8af53a4eed6ba8f2b4359cb2ce8d0dea4f97688e3bc926ffccd46af6f"
+    end
   end
 
   def install
-    bin.install "nv"
+    bin.install cached_download => "nv"
   end
 
   def caveats
     <<~EOS
       Next:
         nv enroll
-        nv create hello --value "Every workflow starts with a vertex."
-        nv app expose http://localhost:8080 --name myapp --analytics
 
-      Turn localhost into globalhost:
-        nv app expose http://localhost:8181 --name dashboard --analytics
+      Browser activation:
+        nv enroll prints a code, opens https://login.nodevertex.com/activate,
+        and waits until approval completes. New email identities must verify email
+        before creating vertices.
+
+      If your shell cannot find nv after install, run:
+        brew link nv
     EOS
   end
 
   test do
-    system "#{bin}/nv", "help"
+    assert_match version.to_s, shell_output("#{bin}/nv --version")
   end
 end
