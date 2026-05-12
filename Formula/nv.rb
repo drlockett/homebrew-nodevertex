@@ -1,26 +1,26 @@
 class Nv < Formula
   desc "Node Vertex CLI - turn values, files, apps, and workflows into vertices"
   homepage "https://nodevertex.com"
-  version "0.1.6"
+  version "0.1.7"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.6/nv-darwin-arm64"
-      sha256 "4dfa4ec9af7c32007f73a2b4bde78d9f59747129a3a02e9028f81c0e3cff0731"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-darwin-arm64"
+      sha256 "2e4aeef34ff65df0639e5a71232b2312c2d689273b0ed3a363ac9b7d0f434c8c"
     else
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.6/nv-darwin-x64"
-      sha256 "014a55351f0ebe271046a0994b35ed2e463946b939433aaa1b189e37f8742caf"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-darwin-x64"
+      sha256 "55b53d09f58972c07fc18030dad58c67d526e39fc691af7a6aedaaaf407f19e8"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.6/nv-linux-arm64"
-      sha256 "6830133fb2904958b279cdb444a8c1c8a874b073e970678ff31bfee2de0ce3d4"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-linux-arm64"
+      sha256 "75b033167627a40d2fe0faf4229abc57022dd92e26cdf38633998fc65a2fbac7"
     else
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.6/nv-linux-x64"
-      sha256 "9bef370dd77fd9f094a8549b49736cd16ea4cc9bb1c79a5b0444c77e62afe1cf"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-linux-x64"
+      sha256 "fa95855c2e60544392de9cd1a630800458f64bd72c386809c46297339a1dee7b"
     end
   end
 
@@ -37,6 +37,9 @@ class Nv < Formula
         nv enroll prints a code, opens https://login.nodevertex.com/activate,
         and waits until approval completes. New email identities must verify email
         before creating vertices.
+
+      Finder/desktop sharing:
+        nv install context
 
       If your shell cannot find nv after install, run:
         brew link nv
