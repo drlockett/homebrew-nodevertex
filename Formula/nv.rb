@@ -1,26 +1,26 @@
 class Nv < Formula
   desc "Node Vertex CLI - turn values, files, apps, and workflows into vertices"
   homepage "https://nodevertex.com"
-  version "0.1.7"
+  version "0.1.8"
   license "Proprietary"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-darwin-arm64"
-      sha256 "2e4aeef34ff65df0639e5a71232b2312c2d689273b0ed3a363ac9b7d0f434c8c"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.8/nv-darwin-arm64"
+      sha256 "8ae19cd6a0e2c0a43be7355896518302390fc1da17e6b7b148d463bb640fa895"
     else
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-darwin-x64"
-      sha256 "55b53d09f58972c07fc18030dad58c67d526e39fc691af7a6aedaaaf407f19e8"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.8/nv-darwin-x64"
+      sha256 "9cd8031b1dc3ab5b77e7be3125ff6068d017c301ea5fa9ecd03713d54ea06752"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-linux-arm64"
-      sha256 "75b033167627a40d2fe0faf4229abc57022dd92e26cdf38633998fc65a2fbac7"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.8/nv-linux-arm64"
+      sha256 "6d0aa870492ec35289645c79651595d9ff12f98156261fd253f031f81de06fb4"
     else
-      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.7/nv-linux-x64"
-      sha256 "fa95855c2e60544392de9cd1a630800458f64bd72c386809c46297339a1dee7b"
+      url "https://nodevertex.com/downloads/r2/downloads/nvcli/0.1.8/nv-linux-x64"
+      sha256 "3a3ed78bacb07436e7c596da6ceff3dfbd4d1d27eb8fc3fbe7ffc92bba646541"
     end
   end
 
